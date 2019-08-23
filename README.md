@@ -33,7 +33,7 @@ end
 
 Then to send a message...
 ```ruby
-FrmMercury::Sender.send("Device FCM token", "Some title", "Some body message", "sound.mp3 (Leave empty for default)", "Hash in case you want to send extra info (optional)")
+FrmMercury::Sender.send("Device FCM token as String or many tokens as Array", "Some title", "Some body message", "sound.mp3 (Leave empty for default)", "Hash in case you want to send extra info (optional)")
 ```
 
 ## Development
