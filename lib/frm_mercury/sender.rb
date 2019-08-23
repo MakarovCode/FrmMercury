@@ -1,6 +1,6 @@
 module FrmMercury
   class Sender
-    def self.send(to, title, body, sound, data)
+    def self.send(to=nil, title=nil, body=nil, sound=nil, data=nil)
       config = FrmMercury.configuration
 
       require 'uri'
@@ -16,7 +16,6 @@ module FrmMercury
           "mutable_content": true,
           "sound": sound.nil? ? "enabled" : sound
         },
-
         "data": data
       }.to_json
 
@@ -24,7 +23,7 @@ module FrmMercury
       https = Net::HTTP.new(uri.host,uri.port)
       https.use_ssl = true
       req = Net::HTTP::Post.new(uri.path, initheader = {"Content-Type" => "application/json", "Authorization" => "key=#{config.get_api_key}"})
-      req.body = "[ #{params} ]"
+      req.body = params
       res = https.request(req)
       puts "Response #{res.code} #{res.message}: #{res.body}"
     end
