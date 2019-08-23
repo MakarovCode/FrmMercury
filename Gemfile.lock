@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    frm_mercury (0.1.2)
+    frm_mercury (0.1.3)
 
 GEM
   remote: https://rubygems.org/

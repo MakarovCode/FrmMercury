@@ -8,8 +8,11 @@ module FrmMercury
       require 'net/https'
       require 'json'
 
+      key = to.kind_of?(Array) ? "registration_ids" : "to"
+
+
       params = {
-        "to": to,
+        "#{key}": to,
         "notification": {
           "title": title.nil? ? "Testing notification" : title,
           "body": body.nil? ? "This is a test push notification, liking it?" : body,
