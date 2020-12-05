@@ -29,7 +29,7 @@ module FrmMercury
       req.body = params
       res = https.request(req)
       puts "Response #{res.code} #{res.message}: #{res.body}"
-      res
+      return "Response #{res.code} #{res.message}: #{res.body}"
     end
   end
 end
