@@ -18,10 +18,10 @@ module FrmMercury
           "mutable_content": true,
           "sound": sound.nil? ? "enabled" : sound
         },
-        "android":{
-          "ttl":"86400s",
-          "notification"{
-            "click_action":"MAIN_ACTIVITY"
+        "android": {
+          "ttl": "86400s",
+          "notification": {
+            "click_action": "MAIN_ACTIVITY"
           }
         },
         "data": data
