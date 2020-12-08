@@ -10,7 +10,6 @@ module FrmMercury
 
       key = to.kind_of?(Array) ? "registration_ids" : "to"
 
-
       params = {
         "#{key}": to,
         "notification": {
@@ -18,6 +17,12 @@ module FrmMercury
           "body": body.nil? ? "This is a test push notification, liking it?" : body,
           "mutable_content": true,
           "sound": sound.nil? ? "enabled" : sound
+        },
+        "android":{
+          "ttl":"86400s",
+          "notification"{
+            "click_action":"MAIN_ACTIVITY"
+          }
         },
         "data": data
       }.to_json
