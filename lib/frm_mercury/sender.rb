@@ -21,7 +21,7 @@ module FrmMercury
         "android": {
           "ttl": "86400s",
           "notification": {
-            "click_action": "MAIN_ACTIVITY"
+            "click_action": "android.intent.action.MAIN"
           }
         },
         "data": data
