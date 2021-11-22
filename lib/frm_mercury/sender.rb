@@ -1,6 +1,6 @@
 module FrmMercury
   class Sender
-    def self.send(to=nil, title=nil, body=nil, sound=nil, data=nil)
+    def self.send(to=nil, title=nil, body=nil, sound=nil, data=nil, extra={})
       config = FrmMercury.configuration
 
       require 'uri'
@@ -25,7 +25,9 @@ module FrmMercury
           }
         },
         "data": data
-      }.to_json
+      }
+
+      params = params.merge(extra).to_json
 
       uri = URI.parse("https://fcm.googleapis.com/fcm/send")
       https = Net::HTTP.new(uri.host,uri.port)
