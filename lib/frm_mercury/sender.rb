@@ -27,11 +27,11 @@ module FrmMercury
         "data": data
       }
 
-      if subtitle.nil? 
+      if !subtitle.nil? 
         params["notification"]["subtitle"] = subtitle
       end
 
-      if icon.nil? 
+      if !icon.nil? 
         params["notification"]["icon"] = icon
       end
 
