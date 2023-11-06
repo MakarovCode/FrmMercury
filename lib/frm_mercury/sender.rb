@@ -1,6 +1,6 @@
 module FrmMercury
   class Sender
-    def self.send(to=nil, title=nil, body=nil, sound=nil, data=nil, extra={})
+    def self.send(to=nil, title=nil, body=nil, subtitle=nil, icon=nil, sound=nil, data=nil, extra={})
       config = FrmMercury.configuration
 
       require 'uri'
@@ -26,6 +26,14 @@ module FrmMercury
         },
         "data": data
       }
+
+      if subtitle.nil? 
+        params["notification"]["subtitle"] = subtitle
+      end
+
+      if icon.nil? 
+        params["notification"]["icon"] = icon
+      end
 
       params = params.merge(extra).to_json
 
