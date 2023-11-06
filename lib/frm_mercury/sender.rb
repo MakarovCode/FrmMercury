@@ -27,12 +27,12 @@ module FrmMercury
         "data": data
       }
 
-      if !subtitle.nil? 
-        params["notification"]["subtitle"] = subtitle
+      if subtitle.present? 
+        params[:notification][:subtitle] = subtitle
       end
 
-      if !icon.nil? 
-        params["notification"]["icon"] = icon
+      if icon.present? 
+        params[:notification][:icon] = icon
       end
 
       params = params.merge(extra).to_json
